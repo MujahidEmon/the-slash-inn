@@ -1,11 +1,11 @@
 import NavBar from "../../Components/NavBar/NavBar";
 
-const Home = () => {
+const Root = () => {
     return (
-        <div>
+        <div className="font-ubuntu">
             <NavBar></NavBar>
         </div>
     );
 };
 
-export default Home;
+export default Root;

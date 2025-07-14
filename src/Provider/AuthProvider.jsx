@@ -9,7 +9,7 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
 
     // google provider
-    const googleProvider = GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
 
     // email register
