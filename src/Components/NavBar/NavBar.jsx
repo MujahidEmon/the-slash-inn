@@ -1,8 +1,9 @@
 import { BiCloud } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <div className="navbar bg-base-100 shadow-xs md:px-4">
+        <div className="navbar bg-black/10 backdrop-blur-xs py-1 min-h-8 shadow-xs md:px-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -11,7 +12,7 @@ const NavBar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
+                        <li><Link to={'/'}>Home</Link></li>
                         <li><a>About us</a></li>
                         <li><a>Explore</a></li>
                         <li><a>FAQ</a></li>
@@ -22,7 +23,7 @@ const NavBar = () => {
                 <div className="md:flex hidden items-center justify-between gap-18">
                     <p className="flex items-center gap-1"><BiCloud></BiCloud> 31 C</p>
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Home</a></li>
+                        <li><Link to={'/'}>Home</Link></li>
                         <li><a>About us</a></li>
                         <li><a>Explore</a></li>
                     </ul>
@@ -58,7 +59,7 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><Link to={'/login'}>Login</Link></li>
                     </ul>
                 </div>
             </div>
