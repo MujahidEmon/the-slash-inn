@@ -36,7 +36,7 @@ const Hero = () => {
                                         className="border-b-2  bg-opacity-100 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none "
                                         type="text"
                                         name="guest"
-                                        placeholder="guest"
+                                        placeholder="Number of Guests"
                                     />
 
                                 </div>
