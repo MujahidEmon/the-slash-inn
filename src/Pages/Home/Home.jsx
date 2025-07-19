@@ -1,5 +1,7 @@
 import Hero from "../../Components/Hero/Hero";
-import NavBar from "../../Components/NavBar/NavBar";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
+
 import wcImage1 from "../../assets/images/wc imgs/istockphoto-1418784247-612x612.jpg"
 import wcImage2 from "../../assets/images/wc imgs/istockphoto-178842131-612x612.jpg"
 import wcImage3 from "../../assets/images/wc imgs/istockphoto-472899538-612x612.jpg"
@@ -10,7 +12,7 @@ const Home = () => {
             <Hero></Hero>
 
             {/* Welcome Section */}
-            <div className="lg:max-w-7xl mx-auto my-18 md:max-w-md max-w-xs flex md:flex-row flex-col gap-8">
+            <div className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs flex md:flex-row flex-col gap-8">
                 {/* Image Div */}
                 <div className="grid grid-cols-2 gap-4 w-1/2">
                     <img src={wcImage1} alt="" />
@@ -34,6 +36,26 @@ const Home = () => {
                 </div>
 
             </div>
+
+            {/* Location And Map section */}
+            <section className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
+                <h1 className="text-4xl text-center font-semibold ">Our Location</h1>
+                <div>
+                    <div className="w-1/2 h-[500px] rounded-xl border">
+                        <MapContainer className="h-full w-full rounded-xl" center={[24.4026, 89.5644]} zoom={13} scrollWheelZoom={false}>
+                            <TileLayer
+                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            <Marker position={[24.4026, 89.5644]}>
+                                <Popup>
+                                    A pretty CSS3 popup. <br /> Easily customizable.
+                                </Popup>
+                            </Marker>
+                        </MapContainer>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
