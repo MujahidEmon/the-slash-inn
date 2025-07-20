@@ -40,8 +40,8 @@ const Home = () => {
             {/* Location And Map section */}
             <section className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
                 <h1 className="text-4xl text-center font-semibold ">Our Location</h1>
-                <div>
-                    <div className="w-1/2 h-[500px] rounded-xl border">
+                <div className="md:flex-row flex-col flex justify-between gap-8">
+                    <div className="w-1/2 h-[500px] rounded-xl mt-8">
                         <MapContainer className="h-full w-full rounded-xl" center={[24.4026, 89.5644]} zoom={13} scrollWheelZoom={false}>
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -53,6 +53,31 @@ const Home = () => {
                                 </Popup>
                             </Marker>
                         </MapContainer>
+                    </div>
+                    <div className="w-full md:w-1/2 flex flex-col justify-center">
+                        <h2 className="text-3xl font-bold mb-4">Visit Our Location</h2>
+                        <p className="text-gray-600 mb-4">
+                            We are located in the heart of Enayetpur, offering scenic views and peaceful surroundings.
+                        </p>
+                        <div className="mb-3">
+                            <p className="font-semibold">📍 Address:</p>
+                            <p>Kazipur Road, Enayetpur, Sirajganj</p>
+                            <p>Bangladesh - 6751</p>
+                        </div>
+                        <div className="mb-3">
+                            <p className="font-semibold">📞 Contact:</p>
+                            <p>+880 1700 000000</p>
+                            <p>contact@slashhotel.com</p>
+                        </div>
+                        <div className="mb-4">
+                            <p className="font-semibold">Nearby:</p>
+                            <ul className="list-disc list-inside text-sm text-gray-700">
+                                <li>Enayetpur Darbar Sharif (2 min walk)</li>
+                                <li>Local Bazaar (5 min drive)</li>
+                                <li>Bus Stand (200m away)</li>
+                            </ul>
+                        </div>
+                        <button className="bg-yellow-500 text-white px-6 py-2 rounded-full hover:bg-yellow-600 w-fit">Get Directions</button>
                     </div>
                 </div>
             </section>
