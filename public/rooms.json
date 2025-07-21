@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Deluxe Room",
+    "image": "/images/rooms/deluxe.jpg",
+    "pricePerNight": 4500,
+    "capacity": 2,
+    "features": [
+      "Free WiFi",
+      "Air Conditioning",
+      "Breakfast Included",
+      "Private Balcony"
+    ],
+    "description": "A luxurious room with king-size bed, balcony, and a beautiful city view."
+  },
+  {
+    "id": 2,
+    "name": "Standard Room",
+    "image": "/images/rooms/standard.jpg",
+    "pricePerNight": 3000,
+    "capacity": 2,
+    "features": [
+      "Free WiFi",
+      "AC",
+      "Television"
+    ],
+    "description": "Comfortable standard room perfect for business and solo travelers."
+  },
+  {
+    "id": 3,
+    "name": "Family Suite",
+    "image": "/images/rooms/family.jpg",
+    "pricePerNight": 6500,
+    "capacity": 4,
+    "features": [
+      "2 Beds",
+      "Mini Fridge",
+      "Hot Water",
+      "Room Service"
+    ],
+    "description": "Spacious suite ideal for families with two large beds and ample amenities."
+  },
+  {
+    "id": 4,
+    "name": "Couple Premium Room",
+    "image": "/images/rooms/couple.jpg",
+    "pricePerNight": 5500,
+    "capacity": 2,
+    "features": [
+      "Romantic Setup",
+      "Candlelight Dinner",
+      "Lake View"
+    ],
+    "description": "Perfect for couples looking for a romantic escape."
+  },
+  {
+    "id": 5,
+    "name": "Executive Suite",
+    "image": "/images/rooms/executive.jpg",
+    "pricePerNight": 7500,
+    "capacity": 3,
+    "features": [
+      "Private Workspace",
+      "Mini Bar",
+      "24/7 Butler Service",
+      "Complimentary Snacks"
+    ],
+    "description": "Ideal for business travelers with luxury, comfort, and privacy in one package."
+  },
+  {
+    "id": 6,
+    "name": "Budget Room",
+    "image": "/images/rooms/budget.jpg",
+    "pricePerNight": 1800,
+    "capacity": 1,
+    "features": [
+      "WiFi",
+      "Fan",
+      "Shared Bathroom"
+    ],
+    "description": "Affordable stay option with essential amenities for solo travelers."
+  }
+]

@@ -6,6 +6,8 @@ import wcImage1 from "../../assets/images/wc imgs/istockphoto-1418784247-612x612
 import wcImage2 from "../../assets/images/wc imgs/istockphoto-178842131-612x612.jpg"
 import wcImage3 from "../../assets/images/wc imgs/istockphoto-472899538-612x612.jpg"
 import wcImage4 from "../../assets/images/wc imgs/istockphoto-503016934-612x612.jpg"
+import RoomCard from "../../Components/RoomCard/RoomCard";
+import RatingCard from "../../Components/RatingCard/RatingCard";
 const Home = () => {
     return (
         <div>
@@ -81,6 +83,27 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Feature Rooms */}
+            <div className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
+                <h1 className="text-center text-4xl font-semibold">The Slash Inn Exclusive</h1>
+                <div className="flex md:flex-row flex-col gap-5 mt-12">
+                    <RoomCard></RoomCard>
+                    <RoomCard></RoomCard>
+                    <RoomCard></RoomCard>
+                </div>
+            </div>
+
+
+            <div className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
+                <h1 className="text-center text-4xl font-semibold">Our Ratings and Reviews</h1>
+                <div className="flex md:flex-row flex-col justify-between gap-5 mt-12">
+                    <RatingCard></RatingCard>
+                    <RatingCard></RatingCard>
+                    <RatingCard></RatingCard>
+                    <RatingCard></RatingCard>
+                </div>
+            </div>
         </div>
     );
 };
