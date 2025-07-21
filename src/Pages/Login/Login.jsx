@@ -1,9 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const Login = () => {
     const {login} = useAuth();
+    const {axiosSecure} = useAxiosSecure();
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
@@ -13,7 +16,12 @@ const Login = () => {
         login(email, password)
         .then(res => {
             console.log(res.user);
-            navigate('/');
+            axios.post(`${import.meta.env.VITE_API_URL}/jwt`, {email: res.user.email}, {withCredentials: true})
+            .then(res => {
+                console.log(res.data);
+            })
+            // navigate('/');
+
         })
         .catch(error => {
             console.log(error);
@@ -23,7 +31,7 @@ const Login = () => {
 
     return (
         <div className="bg-gray-50">
-            <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">
+            <div className="min-h-content flex flex-col items-center justify-center py-6 px-4">
                 <div className="max-w-[480px] w-full">
 
 

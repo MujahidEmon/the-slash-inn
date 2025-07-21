@@ -1,11 +1,14 @@
 import { BiCloud } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
 
 const NavBar = () => {
     const {user, logout} = useAuth();
     const handleLogout = () => {
         logout();
+        axios.get(`${import.meta.env.VITE_API_URL}/logout`, {withCredentials: true})
+        .then(res => console.log(res.data))
     }
     // console.log(user);
     return (
