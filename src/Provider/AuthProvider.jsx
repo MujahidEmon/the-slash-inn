@@ -48,7 +48,8 @@ const AuthProvider = ({children}) => {
         register,
         login,
         googleLogin,
-        logout
+        logout,
+        user
     }
     return (
         <AuthContext.Provider value={AuthInfo}>

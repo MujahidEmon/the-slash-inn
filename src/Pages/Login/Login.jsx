@@ -1,6 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
+    const {login} = useAuth();
+    const navigate = useNavigate();
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get("email");
+        const password = form.get("password");
+        login(email, password)
+        .then(res => {
+            console.log(res.user);
+            navigate('/');
+        })
+        .catch(error => {
+            console.log(error);
+            toast.error(error.message)
+        })
+    }
+
     return (
         <div className="bg-gray-50">
             <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">
@@ -9,14 +29,15 @@ const Login = () => {
 
                     <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">
                         <h1 className="text-slate-900 text-center text-3xl font-semibold">Sign in</h1>
-                        <form className="mt-12 space-y-6">
+                        <form onSubmit={handleLogin}
+                         className="mt-12 space-y-6">
                             <div>
                                 <label className="text-slate-900 text-sm font-medium mb-2 block">
-                                    User name
+                                    Email
                                 </label>
                                 <div className="relative flex items-center">
                                     <input
-                                        name="username"
+                                        name="email"
                                         type="text"
                                         required
                                         className="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-8 rounded-md outline-blue-600"
@@ -85,7 +106,6 @@ const Login = () => {
 
                             <div className="!mt-12">
                                 <button
-                                    type="button"
                                     className="w-full py-2 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer"
                                 >
                                     Sign in

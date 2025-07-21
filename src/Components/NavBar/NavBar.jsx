@@ -1,7 +1,13 @@
 import { BiCloud } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const NavBar = () => {
+    const {user, logout} = useAuth();
+    const handleLogout = () => {
+        logout();
+    }
+    // console.log(user);
     return (
         <div className="navbar bg-black/10 backdrop-blur-xs py-1 min-h-8 shadow-xs md:px-4">
             <div className="navbar-start">
@@ -46,7 +52,9 @@ const NavBar = () => {
                         <div className="w-10 rounded-full">
                             <img
                                 alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                src={
+                                    user ? user?.photoURL : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                                } />
                         </div>
                     </div>
                     <ul
@@ -59,7 +67,11 @@ const NavBar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><Link to={'/login'}>Login</Link></li>
+                        <li>
+                            {
+                                user? <button onClick={handleLogout}>Logout</button> : <Link to={'/login'}>Login</Link>
+                            }
+                        </li>
                     </ul>
                 </div>
             </div>

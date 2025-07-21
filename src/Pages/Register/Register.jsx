@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 const Register = () => {
-    const {register} = useAuth();
+    const { register } = useAuth();
+    const navigate = useNavigate();
     const [isChecked, setIsChecked] = useState(false);
 
     const handleRegister = (e) => {
@@ -15,22 +18,34 @@ const Register = () => {
         const email = form.get("email");
         const password = form.get("password");
         const cpassword = form.get("cpassword");
+        const photo = form.get("photo");
 
-        if(password !== cpassword){
+        if (password !== cpassword) {
             toast.error("your password and confirm password doesn't match");
             return;
         }
 
 
-        register(email, password)
-        .then(res => {
-            console.log(res.user);
-            toast.success("Registered Successfully")
-        })
-        .catch(error => {
-            console.error(error);
-            
-        })
+        register(email, password, name, photo)
+            .then(res => {
+                console.log(res.user);
+                updateProfile(auth.currentUser, {
+                    photoURL: photo,
+                    displayName: name
+                }).then(() => {
+                    // Profile updated!
+                    // ...
+                }).catch((error) => {
+                    // An error occurred
+                    // ...
+                });
+                toast.success("Registered Successfully")
+                navigate('/')
+            })
+            .catch(error => {
+                console.error(error);
+
+            })
 
         console.log('clicked');
     }
@@ -106,7 +121,7 @@ const Register = () => {
                                 id="tNc"
                                 name="tNc"
                                 type="checkbox"
-                                onChange={()=>setIsChecked(!isChecked)}
+                                onChange={() => setIsChecked(!isChecked)}
                                 className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                             />
                             <label
@@ -126,10 +141,9 @@ const Register = () => {
 
                     <div className="mt-12">
                         <button
-                            disabled = {!isChecked}
-                            className={`w-full py-3 px-4 text-sm tracking-wider font-medium rounded-md text-white  focus:outline-none cursor-pointer ${
-                                !isChecked ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
-                            }`}
+                            disabled={!isChecked}
+                            className={`w-full py-3 px-4 text-sm tracking-wider font-medium rounded-md text-white  focus:outline-none cursor-pointer ${!isChecked ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
+                                }`}
                         >
                             Create an account
                         </button>
@@ -137,7 +151,7 @@ const Register = () => {
                     <p className="text-slate-600 text-sm mt-6 text-center">
                         Already have an account?
                         <Link to={'/login'}
-                            
+
                             className="text-blue-600 font-medium hover:underline ml-1"
                         >
                             Login here
