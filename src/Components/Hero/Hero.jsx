@@ -4,7 +4,7 @@ import { BsArrowDownRight, BsPeople } from 'react-icons/bs';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 const Hero = () => {
     return (
-        <div className='relative h-[calc(100vh-57px)] bg-cover bg-center' style={{ backgroundImage: `url(${heroBg})` }}>
+        <div className=' h-[calc(100vh-57px)] bg-cover bg-center' style={{ backgroundImage: `url(${heroBg})` }}>
             <div className='absolute bottom-10 left-1/2 -translate-x-1/2'>
                 <div
                     className="flex  rounded-xl  items-center justify-center  bg-cover bg-no-repeat"

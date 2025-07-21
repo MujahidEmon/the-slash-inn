@@ -1,12 +1,45 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Register = () => {
+    const {register} = useAuth();
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+
+        const name = form.get("name");
+        const email = form.get("email");
+        const password = form.get("password");
+        const cpassword = form.get("cpassword");
+
+        if(password !== cpassword){
+            toast.error("your password and confirm password doesn't match");
+            return;
+        }
+
+
+        register(email, password)
+        .then(res => {
+            console.log(res.user);
+            toast.success("Registered Successfully")
+        })
+        .catch(error => {
+            console.error(error);
+            
+        })
+
+        console.log('clicked');
+    }
+
+
     return (
         <div className="flex flex-col justify-center sm:h-screen p-4">
             <div className="max-w-md w-full mx-auto border border-gray-300 rounded-2xl p-8">
-                
-
-                <form>
+                <form onSubmit={handleRegister}>
                     <div className="space-y-6">
                         <div>
                             <label className="text-slate-900 text-sm font-medium mb-2 block">
@@ -14,6 +47,7 @@ const Register = () => {
                             </label>
                             <input
                                 name="name"
+                                required
                                 type="text"
                                 className="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
                                 placeholder="Enter name"
@@ -25,6 +59,18 @@ const Register = () => {
                             </label>
                             <input
                                 name="email"
+                                required
+                                type="text"
+                                className="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
+                                placeholder="Enter email"
+                            />
+                        </div>
+                        <div>
+                            <label className="text-slate-900 text-sm font-medium mb-2 block">
+                                Photo URL
+                            </label>
+                            <input
+                                name="photo"
                                 type="text"
                                 className="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
                                 placeholder="Enter email"
@@ -36,6 +82,7 @@ const Register = () => {
                             </label>
                             <input
                                 name="password"
+                                required
                                 type="password"
                                 className="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
                                 placeholder="Enter password"
@@ -47,6 +94,7 @@ const Register = () => {
                             </label>
                             <input
                                 name="cpassword"
+                                required
                                 type="password"
                                 className="text-slate-900 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
                                 placeholder="Enter confirm password"
@@ -55,9 +103,10 @@ const Register = () => {
 
                         <div className="flex items-center">
                             <input
-                                id="remember-me"
-                                name="remember-me"
+                                id="tNc"
+                                name="tNc"
                                 type="checkbox"
+                                onChange={()=>setIsChecked(!isChecked)}
                                 className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                             />
                             <label
@@ -77,8 +126,10 @@ const Register = () => {
 
                     <div className="mt-12">
                         <button
-                            type="button"
-                            className="w-full py-3 px-4 text-sm tracking-wider font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer"
+                            disabled = {!isChecked}
+                            className={`w-full py-3 px-4 text-sm tracking-wider font-medium rounded-md text-white  focus:outline-none cursor-pointer ${
+                                !isChecked ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
+                            }`}
                         >
                             Create an account
                         </button>
