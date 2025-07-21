@@ -8,6 +8,7 @@ import wcImage3 from "../../assets/images/wc imgs/istockphoto-472899538-612x612.
 import wcImage4 from "../../assets/images/wc imgs/istockphoto-503016934-612x612.jpg"
 import RoomCard from "../../Components/RoomCard/RoomCard";
 import RatingCard from "../../Components/RatingCard/RatingCard";
+import Newsletter from "../../Components/Newsletter/Newsletter";
 const Home = () => {
     return (
         <div>
@@ -95,6 +96,7 @@ const Home = () => {
             </div>
 
 
+            {/* Reviews Section */}
             <div className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
                 <h1 className="text-center text-4xl font-semibold">Our Ratings and Reviews</h1>
                 <div className="flex md:flex-row flex-col justify-between gap-5 mt-12">
@@ -104,6 +106,13 @@ const Home = () => {
                     <RatingCard></RatingCard>
                 </div>
             </div>
+
+
+            {/* Newsletter Section */}
+            <div className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
+                <Newsletter></Newsletter>
+            </div>
+            
         </div>
     );
 };
