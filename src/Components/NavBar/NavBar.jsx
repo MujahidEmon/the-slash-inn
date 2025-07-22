@@ -24,7 +24,7 @@ const NavBar = () => {
                         <li><Link to={'/'}>Home</Link></li>
                         <li><a>About us</a></li>
                         <li><a>Explore</a></li>
-                        <li><a>FAQ</a></li>
+                        <li><Link to={'/myBookings'}>My Bookings</Link></li>
                         <li><a>Price and Promotions</a></li>
                         <li><a>Contact</a></li>
                     </ul>
@@ -45,7 +45,7 @@ const NavBar = () => {
             <div className="navbar-end gap-18">
                 <div className="md:flex hidden">
                     <ul className="menu menu-horizontal  px-1">
-                        <li><a>FAQ</a></li>
+                        <li><Link to={'/myBookings'}>My Bookings</Link></li>
                         <li><a>Price and Promotions</a></li>
                         <li><a>Contact</a></li>
                     </ul>

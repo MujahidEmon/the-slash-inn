@@ -1,12 +1,11 @@
-import { data, Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import axios from "axios";
 
 const Login = () => {
     const {login} = useAuth();
-    const {axiosSecure} = useAxiosSecure();
+    const location = useLocation();
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
@@ -20,7 +19,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.data);
             })
-            // navigate('/');
+            navigate(location?.state ? location?.state : '/');
 
         })
         .catch(error => {

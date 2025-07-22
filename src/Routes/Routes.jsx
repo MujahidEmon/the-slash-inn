@@ -3,6 +3,8 @@ import Home from "../Pages/Home/Home";
 import Root from "../Pages/Root/Root";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
+import MyBookings from "../Pages/MyBookings/MyBookings";
 
 const Routes = createBrowserRouter([
     {
@@ -20,6 +22,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/myBookings',
+                element: <PrivateRoutes><MyBookings></MyBookings></PrivateRoutes>
             }
         ]
     }
