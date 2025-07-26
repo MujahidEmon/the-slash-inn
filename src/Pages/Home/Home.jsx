@@ -9,7 +9,15 @@ import wcImage4 from "../../assets/images/wc imgs/istockphoto-503016934-612x612.
 import RoomCard from "../../Components/RoomCard/RoomCard";
 import RatingCard from "../../Components/RatingCard/RatingCard";
 import Newsletter from "../../Components/Newsletter/Newsletter";
+import { useEffect, useState } from "react";
 const Home = () => {
+    const [rooms, setRooms] = useState([])
+    useEffect(() => {
+        fetch('rooms.json')
+        .then(res => res.json())
+        .then(data => setRooms(data))
+    },[])
+    console.log(rooms);
     return (
         <div>
             <Hero></Hero>
@@ -89,9 +97,9 @@ const Home = () => {
             <div className="lg:max-w-7xl mx-auto mt-18 md:max-w-md max-w-xs">
                 <h1 className="text-center text-4xl font-semibold">The Slash Inn Exclusive</h1>
                 <div className="flex md:flex-row flex-col gap-5 mt-12">
-                    <RoomCard></RoomCard>
-                    <RoomCard></RoomCard>
-                    <RoomCard></RoomCard>
+                    {
+                        rooms.map((room, idx) => <RoomCard key={idx} room={room}></RoomCard>)
+                    }
                 </div>
             </div>
 

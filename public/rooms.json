@@ -1,83 +1,112 @@
-[
-  {
-    "id": 1,
-    "name": "Deluxe Room",
-    "image": "/images/rooms/deluxe.jpg",
-    "pricePerNight": 4500,
-    "capacity": 2,
-    "features": [
-      "Free WiFi",
-      "Air Conditioning",
-      "Breakfast Included",
-      "Private Balcony"
-    ],
-    "description": "A luxurious room with king-size bed, balcony, and a beautiful city view."
+[{
+  "_id": {
+    "$oid": "68151bce141d35a45eb134b7"
   },
-  {
-    "id": 2,
-    "name": "Standard Room",
-    "image": "/images/rooms/standard.jpg",
-    "pricePerNight": 3000,
-    "capacity": 2,
-    "features": [
-      "Free WiFi",
-      "AC",
-      "Television"
-    ],
-    "description": "Comfortable standard room perfect for business and solo travelers."
+  "title": "Sea Front Deluxe Supreme",
+  "description": "All the rooms are designed to provide you best accommodation according to your need and budget. Sea front Deluxe Supreme rooms are to those who want to see the sea and feel the waves. From this room you can enjoy sunset lying in your bed. These rooms offer the best sea view in Cox′s Bazar.\n\nEvery rooms are equipped with 32″ LED TV. One king size bed, local & IDD Phone, well equipped toilet with running hot and cold water, split type air conditioner and the best balcony in Cox′s Bazar.",
+  "pricePerNight": 2500,
+  "roomSize": 160,
+  "bedFor": 2,
+  "AC": "yes",
+  "TV": "yes",
+  "BeachView": "yes",
+  "img": "https://res.cloudinary.com/duxyduzb3/image/upload/v1746213836/va0xwqex0vdb2uvng1qt.jpg",
+  "roomImages": [
+    "https://res.cloudinary.com/duxyduzb3/image/upload/v1746213837/q5kbu6onnpqn9e6pjxy1.jpg",
+    "https://res.cloudinary.com/duxyduzb3/image/upload/v1746213838/kcn9zuvh5jgcxirbkhug.jpg"
+  ],
+  "unAvailable": [
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-07T18:00:00.000Z",
+    "2025-05-08T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-07T18:00:00.000Z",
+    "2025-05-08T18:00:00.000Z",
+    "2025-05-12T18:00:00.000Z",
+    "2025-05-13T18:00:00.000Z",
+    "2025-05-14T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-07T18:00:00.000Z",
+    "2025-05-08T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-07T18:00:00.000Z",
+    "2025-05-08T18:00:00.000Z",
+    "2025-05-12T18:00:00.000Z",
+    "2025-05-13T18:00:00.000Z",
+    "2025-05-14T18:00:00.000Z",
+    "2025-05-18T18:00:00.000Z",
+    "2025-05-19T18:00:00.000Z"
+  ],
+  "Breakfast": "Not Include",
+  "Laundry": "Not Include",
+  "roomCode": "206"
+},
+{
+  "_id": {
+    "$oid": "681532f0bb6ff24da716d0d2"
   },
-  {
-    "id": 3,
-    "name": "Family Suite",
-    "image": "/images/rooms/family.jpg",
-    "pricePerNight": 6500,
-    "capacity": 4,
-    "features": [
-      "2 Beds",
-      "Mini Fridge",
-      "Hot Water",
-      "Room Service"
-    ],
-    "description": "Spacious suite ideal for families with two large beds and ample amenities."
+  "title": "Presidential Suite",
+  "description": "These Suites are on the top Floor of the building having sea facing view. The Suites are well decorated and furnished. Every Suite consists of two couple bedded rooms (king size bed), a dining room, a kitchen, the best sea view balcony in Cox′s Bazara from where one can enjoy the Sea, the Sunset & the waves of the Sea.\n\nRooms are equipped with 32″ Flat TV, ID Phone, provision for supplying of hot and cold water, Split type air conditioner and a well equipped toilet with bath tab.",
+  "pricePerNight": 5000,
+  "roomSize": 200,
+  "bedFor": 2,
+  "AC": "yes",
+  "TV": "yes",
+  "BeachView": "yes",
+  "img": "https://res.cloudinary.com/duxyduzb3/image/upload/v1746219756/n97p0xppuk88hqicqnwe.jpg",
+  "roomImages": [
+    "https://res.cloudinary.com/duxyduzb3/image/upload/v1746219757/zl1x6e4cywqrxadmnmxu.jpg",
+    "https://res.cloudinary.com/duxyduzb3/image/upload/v1746219759/qu5bngxnvwqkrvna6jdd.jpg"
+  ],
+  "unAvailable": [
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-05-06T18:00:00.000Z",
+    "2025-06-10T18:00:00.000Z"
+  ],
+  "roomCode": "301",
+  "Breakfast": "Include",
+  "Laundry": "Not Include"
+},
+{
+  "_id": {
+    "$oid": "68159829bb6ff24da716d0d3"
   },
-  {
-    "id": 4,
-    "name": "Couple Premium Room",
-    "image": "/images/rooms/couple.jpg",
-    "pricePerNight": 5500,
-    "capacity": 2,
-    "features": [
-      "Romantic Setup",
-      "Candlelight Dinner",
-      "Lake View"
-    ],
-    "description": "Perfect for couples looking for a romantic escape."
-  },
-  {
-    "id": 5,
-    "name": "Executive Suite",
-    "image": "/images/rooms/executive.jpg",
-    "pricePerNight": 7500,
-    "capacity": 3,
-    "features": [
-      "Private Workspace",
-      "Mini Bar",
-      "24/7 Butler Service",
-      "Complimentary Snacks"
-    ],
-    "description": "Ideal for business travelers with luxury, comfort, and privacy in one package."
-  },
-  {
-    "id": 6,
-    "name": "Budget Room",
-    "image": "/images/rooms/budget.jpg",
-    "pricePerNight": 1800,
-    "capacity": 1,
-    "features": [
-      "WiFi",
-      "Fan",
-      "Shared Bathroom"
-    ],
-    "description": "Affordable stay option with essential amenities for solo travelers."
-  }
-]
+  "title": "Super Deluxe Triple",
+  "description": "This is for small family, all of these rooms offer triple accommodation with one Queen size bed and one single bed with private balcony from where one can enjoy the sea from side facilitated with 32″ LED TV, local & IDD Phone, well equipped\ntoilet with running hot and cold water, split type air conditioner.",
+  "pricePerNight": 2500,
+  "roomSize": 140,
+  "bedFor": 4,
+  "AC": "yes",
+  "TV": "yes",
+  "BeachView": "yes",
+  "roomCode": "205",
+  "Breakfast": "Include",
+  "Laundry": "Include",
+  "img": "https://res.cloudinary.com/duxyduzb3/image/upload/v1746245671/pkuodelsifsr2mnolcvf.jpg",
+  "roomImages": [
+    "https://res.cloudinary.com/duxyduzb3/image/upload/v1746245672/l7iz2uazjpnemjhuk95l.jpg",
+    "https://res.cloudinary.com/duxyduzb3/image/upload/v1746245673/z1v6asi5ykhv5e13paqy.jpg"
+  ],
+  "unAvailable": [
+    "2025-05-10T18:00:00.000Z",
+    "2025-05-11T18:00:00.000Z",
+    "2025-05-10T18:00:00.000Z",
+    "2025-05-11T18:00:00.000Z",
+    "2025-05-21T18:00:00.000Z",
+    "2025-05-22T18:00:00.000Z"
+  ]
+}]
