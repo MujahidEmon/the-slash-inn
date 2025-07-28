@@ -11,7 +11,7 @@ const useAxiosSecure = () => {
     const navigate = useNavigate();
 
     axiosSecure.interceptors.response.use(res => {
-        console.log("form axiosSecure");
+        // console.log("form axiosSecure");
         return res;
     },
         async error => {
