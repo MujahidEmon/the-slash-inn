@@ -1,4 +1,6 @@
 import React from "react";
+import CustomTitle from "../../Components/CustomTitle/CustomTitle";
+import { Helmet } from "react-helmet";
 
 const MyBookings = () => {
   const bookings = [
@@ -26,6 +28,10 @@ const MyBookings = () => {
 
   return (
     <div className=" md:max-w-7xl max-w-sm mx-auto my-12 rounded-2xl bg-gray-100 p-6">
+      <Helmet>
+        <title>The Slash Inn - Bookings</title>
+        <meta name="description" content="Book your room at The Slash Inn. Cozy, clean, and affordable stays."/>
+      </Helmet>
       <h2 className="text-2xl font-bold mb-6 text-gray-800">My Bookings</h2>
       <div className="space-y-6">
         {bookings.map((booking) => (
